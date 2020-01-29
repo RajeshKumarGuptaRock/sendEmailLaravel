@@ -1,0 +1,32 @@
+Email send with gmail account in laravel from localhost
+1] Set configuration of .env file like as
+	MAIL_DRIVER=smtp
+	MAIL_HOST=smtp.googlemail.com
+	MAIL_PORT=465
+	MAIL_USERNAME=write gmail id here
+	MAIL_PASSWORD=write password here
+	MAIL_ENCRYPTION=ssl
+2] Set gmail configuration setting
+	
+	a] Open gmail Account >> Click on "Manage your Google account" at the right top corner >> Click on security link on left side of screen >> Click on "turn on access" link at bottom of the page.
+
+3] Write Code
+   a] Open web.php file from routes >> web.php
+   b] Write the code like as
+   		Route::get('/', function () {
+		    $to_name = "rajesh";
+		    $to_email = "rkumargupta798@gmail.com";
+		    $data =array("name"=>"rajesh","body"=>"test mail");
+		    Mail::send('mail',$data,function($message) use($to_name,$to_email){
+				$message->to($to_email)->subject("lara mail subject");
+		    });
+		});
+   c] Open resources folder >> Open Views folder >> Create new file like as mail.blade.php file >> write these line of code like as.
+   	
+   	hi<strong>{{$name}}</strong>
+	<p>{{$body}}</p>
+
+
+4] Execute and test email
+  a] Hit this URL on Browser http://localhost/blog/public/	
+  b] Check email 

@@ -1,11 +1,22 @@
 Email send with gmail account in laravel from localhost
-1] Set configuration of .env file like as
+1] Set configuration of .env file like as 
+
+For localhost
 	MAIL_DRIVER=smtp
 	MAIL_HOST=smtp.googlemail.com
 	MAIL_PORT=465
 	MAIL_USERNAME=write gmail id here
 	MAIL_PASSWORD=write password here
 	MAIL_ENCRYPTION=ssl
+For Live
+	MAIL_DRIVER=smtp
+	MAIL_HOST= login into cpanel and go to the "Mail Client Manual Settings" >> copy Incoming Server: like as mail.xyz.com
+	MAIL_PORT=465
+	MAIL_USERNAME= login into cpanel and go to the and copy Username here
+	MAIL_PASSWORD= write cpanel password here
+	MAIL_ENCRYPTION=ssl
+	FROM_NAME=Shaadicart
+
 2] Set gmail configuration setting
 	
 	a] Open gmail Account >> Click on "Manage your Google account" at the right top corner >> Click on security link on left side of screen >> Click on "turn on access" link at bottom of the page.
